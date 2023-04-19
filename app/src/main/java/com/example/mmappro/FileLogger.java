@@ -11,7 +11,7 @@ public class FileLogger {
         mNativePtr = mNativeCreate(mlogFile.getAbsolutePath(), maxFileSize);
     }
 
-    public void log(String content) {
+    public void write(String content) {
         byte[] data = content.getBytes();
         mNativeWrite(mNativePtr, data, data.length);
     }

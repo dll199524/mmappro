@@ -1,8 +1,8 @@
 package com.example.mmappro;
 
-public class DLog {
+public class MyLog {
     static {
-        System.loadLibrary("native-lib");
+        System.loadLibrary("mmappro");
     }
     public void init() {
 

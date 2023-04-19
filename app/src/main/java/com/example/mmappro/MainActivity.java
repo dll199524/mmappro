@@ -3,6 +3,7 @@ package com.example.mmappro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.widget.TextView;
 
 import com.example.mmappro.databinding.ActivityMainBinding;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         // Example of a call to a native method
         TextView tv = binding.sampleText;
         tv.setText(stringFromJNI());
+        FileLogger logger = new FileLogger(Environment.getExternalStorageDirectory(), 4 * 1024 * 1024);
+        logger.write("1234567");
     }
 
     /**

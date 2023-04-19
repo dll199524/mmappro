@@ -19,3 +19,17 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# 保留所有的本地native方法不被混淆
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+# 保留了继承自Activity、Application这些类的子类
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.preference.Preference
+-keep public class * extends android.view.View
+-keep public class * extends android.database.sqlite.SQLiteOpenHelper{*;}
